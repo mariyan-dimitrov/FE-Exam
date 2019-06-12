@@ -1,6 +1,12 @@
 .post-comments {
     border: 1px solid $siteBorderColor;
-    margin-left: $siteGutter;
+    @media (min-width: $tabletMaxWidth) { 
+        margin-left: $siteGutter;
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        border: none;
+    }
 
     .comments {
         &-header {
@@ -35,6 +41,9 @@
                             & img {
                                 transform: inherit;
                                 border-radius: 0;
+                            }
+                            @media (max-width: $mobileMaxWidth) { 
+                                flex-basis: 8rem;
                             }
                         }
 
@@ -88,7 +97,7 @@
             }
             @media (max-width: $tabletMaxWidth) {
                 flex-direction: column-reverse;
-    
+                
                 .comments-all {
                     border-right: none;
                 }

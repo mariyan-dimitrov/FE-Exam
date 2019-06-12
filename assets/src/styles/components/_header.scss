@@ -10,6 +10,9 @@
 
     & .site-left {
         min-width: 22rem;
+        @media (max-width: $mobileMaxWidth) {
+            min-width: inherit;
+        }
 
         &-search {
             height: 2.5rem;

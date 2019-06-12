@@ -2,7 +2,6 @@
     background: $siteMainColor;
     color: $siteMainFontColor;
     padding: $siteGutter ;
-    text-align: center;
     @include flexbox (space-evenly, center);
     flex-wrap:wrap;
     
@@ -14,8 +13,22 @@
             background: $siteMainFontColor;
             color: $siteMainColor;
             font-weight: 700;
-             padding: $siteGutter;
+            padding: $siteGutter;
 
+        }
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        @include flexbox (stretch, stretch);
+        flex-direction: column;
+
+        &-box {
+            padding: $siteGutter/2 $siteGutter/2;
+
+            a {
+                display: block;
+                text-align: center;
+            }
         }
     }
 }

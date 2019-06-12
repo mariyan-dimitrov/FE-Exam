@@ -1,9 +1,16 @@
+html {
+    overflow-x: hidden;
+    
+    @media (max-width: $mobileMaxWidth) { 
+        font: 10px/1.6 arial, sans-serif;
+    }   
+}
+
 body {
     margin: 4.5rem auto;
     padding: 0;
     max-width: 1360px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .3);
-    
     @media (max-width: $mobileMaxWidth) {
         @include reset();
         box-shadow:inherit;

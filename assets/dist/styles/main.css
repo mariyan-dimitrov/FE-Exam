@@ -139,9 +139,21 @@ body {
     display: none; }
   @media (max-width: 1240px) {
     .site-header .hamburger {
+      position: relative;
       display: block; }
       .site-header .hamburger .site-navigation {
         display: none; }
+      .site-header .hamburger.opened .site-navigation {
+        z-index: 5;
+        display: flex;
+        position: absolute;
+        top: 2rem;
+        right: -11rem;
+        height: 20rem; }
+        .site-header .hamburger.opened .site-navigation-list {
+          flex-direction: column;
+          background: #1d1d1d;
+          color: #fff; }
     .site-header .hamburger span {
       display: block;
       width: 33px;
@@ -205,10 +217,12 @@ body {
     padding: 2rem;
     border-bottom: 1px solid #c9cac9; }
   .post-comments .comments-main {
+    display: none; }
+  .post-comments .comments-main.opened {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start; }
-    .post-comments .comments-main .comments-all {
+    .post-comments .comments-main.opened .comments-all {
       min-height: 37rem;
       padding: 2rem;
       display: flex;
@@ -216,66 +230,66 @@ body {
       align-items: flex-start;
       flex-direction: column;
       border-right: 1px solid #c9cac9; }
-      .post-comments .comments-main .comments-all .comment {
+      .post-comments .comments-main.opened .comments-all .comment {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         border-bottom: 1px solid #c9cac9;
         margin-bottom: 2rem;
         padding-bottom: 1rem; }
-        .post-comments .comments-main .comments-all .comment-author-pic {
+        .post-comments .comments-main.opened .comments-all .comment-author-pic {
           margin: 0;
           padding: 0;
           margin-right: 2rem;
           flex-basis: 10rem;
           flex-shrink: 0; }
-          .post-comments .comments-main .comments-all .comment-author-pic img {
+          .post-comments .comments-main.opened .comments-all .comment-author-pic img {
             transform: inherit;
             border-radius: 0; }
           @media (max-width: 767px) {
-            .post-comments .comments-main .comments-all .comment-author-pic {
+            .post-comments .comments-main.opened .comments-all .comment-author-pic {
               flex-basis: 8rem; } }
-        .post-comments .comments-main .comments-all .comment-details {
+        .post-comments .comments-main.opened .comments-all .comment-details {
           display: flex;
           flex-direction: column; }
-          .post-comments .comments-main .comments-all .comment-details-reply {
+          .post-comments .comments-main.opened .comments-all .comment-details-reply {
             margin-top: 2rem;
             text-decoration: underline; }
-        .post-comments .comments-main .comments-all .comment:last-child {
+        .post-comments .comments-main.opened .comments-all .comment:last-child {
           border-bottom: inherit; }
-    .post-comments .comments-main .comments-add-new {
+    .post-comments .comments-main.opened .comments-add-new {
       padding: 2rem;
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
       flex-direction: column;
       height: 100%; }
-      .post-comments .comments-main .comments-add-new-field {
+      .post-comments .comments-main.opened .comments-add-new-field {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
         margin-bottom: 2rem;
         width: 100%; }
-        .post-comments .comments-main .comments-add-new-field input {
+        .post-comments .comments-main.opened .comments-add-new-field input {
           width: 100%; }
-        .post-comments .comments-main .comments-add-new-field input, .post-comments .comments-main .comments-add-new-field textarea {
+        .post-comments .comments-main.opened .comments-add-new-field input, .post-comments .comments-main.opened .comments-add-new-field textarea {
           border: none;
           background: #f1f1f1;
           padding: 1rem 0; }
-        .post-comments .comments-main .comments-add-new-field:last-child {
+        .post-comments .comments-main.opened .comments-add-new-field:last-child {
           margin: 0; }
     @media (max-width: 1240px) {
-      .post-comments .comments-main {
+      .post-comments .comments-main.opened {
         flex-direction: column-reverse; }
-        .post-comments .comments-main .comments-all {
+        .post-comments .comments-main.opened .comments-all {
           border-right: none; }
-        .post-comments .comments-main .comments-add-new {
+        .post-comments .comments-main.opened .comments-add-new {
           width: 100%;
           border-bottom: 1px solid #c9cac9; }
-          .post-comments .comments-main .comments-add-new input {
+          .post-comments .comments-main.opened .comments-add-new input {
             width: 50%; }
-          .post-comments .comments-main .comments-add-new textarea {
+          .post-comments .comments-main.opened .comments-add-new textarea {
             width: 100%; } }
 
 .site-sub-footer {

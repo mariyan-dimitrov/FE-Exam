@@ -47,17 +47,28 @@
 
     @media (max-width: $tabletMaxWidth) {
         .hamburger {
+            position: relative;
             display: block;
 
             .site-navigation {
                 display: none;
-                // z-index: 5;
-                // display: flex;
-                // position: absolute;
-                // flex-direction: column;
-                // top: 4rem;
-                // right: -8rem;
-                // height: 20rem;
+            }
+            &.opened {
+
+                .site-navigation {
+                    z-index: 5;
+                    display: flex;
+                    position: absolute;
+                    top: 2rem;
+                    right: -11rem;
+                    height: 20rem;
+
+                    &-list {
+                        flex-direction: column;
+                        background: $siteMainColor;
+                        color: $siteMainFontColor;
+                    }
+                }
             }
         }
 

@@ -1,8 +1,34 @@
 $(function () {
+    // stick floating ads
     $(".floating-ads").stick_in_parent({
         offset_top: 50
     });
 
+    // trigger alm 
+    almInitialize ();
+    
+    // Navigation
+    $('.hamburger').on('click', function () {
+        let $this = $(this)
+        if($this.hasClass('opened')) {
+            $this.removeClass('opened')
+        } else {
+            $this.addClass('opened')
+        }
+    })
+
+    $('.toggle-comments').on('click', function (ev) {
+        ev.preventDefault();
+        let $this = $('.comments-main')
+        if($this.hasClass('opened')) {
+            $this.removeClass('opened')
+        } else {
+            $this.addClass('opened')
+        }
+    })
+})
+
+function almInitialize () {
     let timesALMisTriggered = 0;
     let $appendAfter = $('.post-content')
 
@@ -48,4 +74,4 @@ $(function () {
     $window.on('scroll', function () {
         checkToTriggerALM()
     })
-})
+}

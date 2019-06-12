@@ -14,10 +14,14 @@
             padding: $siteGutter;
             border-bottom: 1px solid $siteBorderColor;
         }
-
+        
         &-main {
-            @include flexbox (flex-start, flex-start);
+            display: none;
+        }
 
+        &-main.opened {
+            @include flexbox (flex-start, flex-start);
+            
             .comments {
                 &-all {
                     min-height: 37rem;
@@ -119,4 +123,5 @@
 
 
     }
+    
 }

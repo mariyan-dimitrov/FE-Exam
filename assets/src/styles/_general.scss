@@ -1,0 +1,68 @@
+body {
+    margin: 4.5rem auto;
+    padding: 0;
+    max-width: 1360px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+}
+
+.row {
+    padding: 0 $siteGutter;
+}
+
+.author-avatar {
+    margin-top: -5rem;
+    margin-left: $siteGutter;
+    position: relative;
+    border-radius: 30px;
+    height: 10rem;
+    width: 10rem;
+
+    & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        transform: rotate(-20deg);
+        border-radius: 30px;
+    }
+}
+
+.btn {
+    border: none;
+    padding: 1rem;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: #046afb;
+    color: #fff;
+}
+
+.ad-wrapper {
+    position: relative;
+    height: 250px;
+    display: block;
+    width: 300px;
+    margin-top: $siteGutter;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        bottom: 0;
+
+    }
+}
+
+.bottom-ads {
+    margin-top: $siteGutter;
+
+    .ad-wrapper {
+        margin: 0;
+    }
+}

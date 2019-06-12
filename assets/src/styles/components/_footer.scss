@@ -1,0 +1,12 @@
+.site-footer {
+    @include flexbox (space-between, center);
+    height: 5rem;
+
+    &-part {
+        display: inline-block;
+
+        &-aside {
+            width: 10rem;
+        }
+    }
+}

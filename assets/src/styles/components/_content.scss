@@ -1,0 +1,59 @@
+.site-content {
+    margin-bottom: $siteGutter;
+    &-wrapper {
+        padding: 0 $siteGutter;
+        @include flexbox (inherit, inherit);
+    }
+
+    &-primary {
+        .post {
+            display: flex;
+
+            &-content {
+                p {
+                    margin-bottom: $siteGutter;
+                }
+
+                margin: 0 $siteGutter;
+                
+                &-header {
+                    font-weight: 700;
+
+                    p {
+                        border-bottom: 1px solid $siteBorderColor;
+                        padding-bottom: 1.5rem;
+                    }
+                }
+            }
+        }
+        .site-content {
+            margin-left: $siteGutter;
+
+        }
+    }
+
+
+    &-secondary {
+        display: flex;
+        flex-direction: column;
+
+        .floating-ads-container {
+            flex-grow: 1;
+
+            .ad-wrapper:first-child {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.site-warnings {
+    .warning {
+        width: 21rem;
+        padding: 2rem;
+        border: 5px solid #bf3918;
+        color: white;
+        background: #ec4a39;
+    }
+}
+

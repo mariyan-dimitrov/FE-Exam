@@ -1,0 +1,16 @@
+$siteGutter: 2rem;
+$siteMainColor: rgb(29, 29, 29);
+$siteSecondColor: #3b3b3b;
+$siteMainFontColor: #fff; 
+$siteBorderColor: #c9cac9;
+
+@mixin reset () {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flexbox ($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}

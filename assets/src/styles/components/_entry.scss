@@ -1,0 +1,37 @@
+.site-content {
+    &-entry {
+        margin-bottom: $siteGutter;
+        position: relative;
+        padding: $siteGutter;
+
+        & .entry-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 7px;
+        }
+
+        & .entry-content {
+            position: absolute;
+            top: 3rem;
+            background: rgba($siteMainColor, 0.6);
+            right: $siteGutter *2;
+            color: $siteMainFontColor;
+            border-radius: 30px;
+            padding: 1rem $siteGutter;
+            font-weight: 700;
+        }
+    }
+
+    &-author {
+        @include flexbox(flex-start, center);
+
+        .author-details {
+            margin-left: $siteGutter * 2;
+
+            &-bolded {
+                font-weight: 700;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.site-sub-footer {
+    background: $siteMainColor;
+    color: $siteMainFontColor;
+    padding: $siteGutter ;
+    text-align: center;
+    @include flexbox (space-evenly, center);
+    flex-wrap:wrap;
+    
+    &-box {
+        padding: $siteGutter $siteGutter/2;
+        display: inline-block;
+
+        & a {
+            background: $siteMainFontColor;
+            color: $siteMainColor;
+            font-weight: 700;
+             padding: $siteGutter;
+
+        }
+    }
+}

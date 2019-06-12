@@ -1,0 +1,92 @@
+.post-comments {
+    border: 1px solid $siteBorderColor;
+    margin-left: $siteGutter;
+
+    .comments {
+        &-header {
+            @include flexbox (space-between, center);
+            padding: $siteGutter;
+            border-bottom: 1px solid $siteBorderColor;
+        }
+
+        &-main {
+            @include flexbox (flex-start, flex-start);
+
+            .comments {
+                &-all {
+                    min-height: 37rem;
+                    padding: $siteGutter;
+                    @include flexbox (flex-start, flex-start);
+                    flex-direction: column;
+                    border-right: 1px solid $siteBorderColor;
+
+                    .comment {
+                        @include flexbox (flex-start, flex-start);
+                        border-bottom: 1px solid $siteBorderColor;
+                        margin-bottom: $siteGutter;
+                        padding-bottom: $siteGutter/2;
+
+                        &-author-pic {
+                            @include reset();
+                            margin-right: $siteGutter;
+                            flex-basis: 20rem;
+                            width: 5rem;
+                            height: 5rem;
+
+                            & img {
+                                transform: inherit;
+                                border-radius: 0;
+                            }
+                        }
+
+                        &-details {
+                            display: flex;
+                            flex-direction: column;
+
+                            &-reply {
+                                margin-top: $siteGutter;
+                                text-decoration: underline;
+                            }
+                        }
+
+                        &:last-child {
+                            border-bottom: inherit;
+                        }
+                    }
+
+                }
+
+                &-add-new {
+                    padding: $siteGutter;
+                    @include flexbox (flex-start, flex-start);
+                    flex-direction: column;
+                    height: 100%;
+
+                    &-field {
+                        @include flexbox (flex-start, flex-start);
+                        flex-direction: column;
+                        margin-bottom: $siteGutter;
+                        width: 100%;
+
+
+                        & input {
+                            width: 100%;
+                        }
+
+                        & input, textarea {
+                            border: none;
+                            background: #f1f1f1;
+                            padding: 1rem 0;
+                            
+                        }
+
+                        &:last-child {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

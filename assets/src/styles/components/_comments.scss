@@ -29,9 +29,8 @@
                         &-author-pic {
                             @include reset();
                             margin-right: $siteGutter;
-                            flex-basis: 20rem;
-                            width: 5rem;
-                            height: 5rem;
+                            flex-basis: 10rem;
+                            flex-shrink: 0;
 
                             & img {
                                 transform: inherit;
@@ -54,6 +53,7 @@
                         }
                     }
 
+                   
                 }
 
                 &-add-new {
@@ -86,7 +86,28 @@
                     }
                 }
             }
+            @media (max-width: $tabletMaxWidth) {
+                flex-direction: column-reverse;
+    
+                .comments-all {
+                    border-right: none;
+                }
+    
+                .comments-add-new {
+                    width: 100%;
+                    border-bottom: 1px solid $siteBorderColor;
+    
+                    input {
+                        width: 50%;
+                    }
+    
+                    textarea {
+                        width: 100%;
+                    }
+                }
+            }
         }
+
 
     }
 }

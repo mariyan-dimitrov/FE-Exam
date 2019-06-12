@@ -40,6 +40,11 @@ body {
   padding: 0;
   max-width: 1360px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
+  @media (max-width: 767px) {
+    body {
+      margin: 0;
+      padding: 0;
+      box-shadow: inherit; } }
 
 .row {
   padding: 0 2rem; }
@@ -118,6 +123,23 @@ body {
         padding: 0 1rem; }
         .site-header .site-left-search-input::placeholder {
           color: gray; }
+      @media (max-width: 767px) {
+        .site-header .site-left-search {
+          display: none; } }
+  .site-header .hamburger span {
+    display: none; }
+  @media (max-width: 1240px) {
+    .site-header .hamburger {
+      display: block; }
+      .site-header .hamburger .site-navigation {
+        display: none; }
+    .site-header .hamburger span {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      background: #fff; } }
 
 .site-navigation {
   min-width: 22rem; }
@@ -191,9 +213,8 @@ body {
           margin: 0;
           padding: 0;
           margin-right: 2rem;
-          flex-basis: 20rem;
-          width: 5rem;
-          height: 5rem; }
+          flex-basis: 10rem;
+          flex-shrink: 0; }
           .post-comments .comments-main .comments-all .comment-author-pic img {
             transform: inherit;
             border-radius: 0; }
@@ -227,6 +248,18 @@ body {
           padding: 1rem 0; }
         .post-comments .comments-main .comments-add-new-field:last-child {
           margin: 0; }
+    @media (max-width: 1240px) {
+      .post-comments .comments-main {
+        flex-direction: column-reverse; }
+        .post-comments .comments-main .comments-all {
+          border-right: none; }
+        .post-comments .comments-main .comments-add-new {
+          width: 100%;
+          border-bottom: 1px solid #c9cac9; }
+          .post-comments .comments-main .comments-add-new input {
+            width: 50%; }
+          .post-comments .comments-main .comments-add-new textarea {
+            width: 100%; } }
 
 .site-sub-footer {
   background: #1d1d1d;
@@ -263,6 +296,23 @@ body {
     display: flex;
     justify-content: inherit;
     align-items: inherit; }
+    @media (max-width: 1240px) {
+      .site-content-wrapper {
+        flex-direction: column; }
+        .site-content-wrapper .bottom-ads {
+          display: none; }
+        .site-content-wrapper .floating-ads {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          margin-bottom: 2rem; }
+          .site-content-wrapper .floating-ads .ad-wrapper {
+            margin: 0; } }
+    @media (max-width: 767px) {
+      .site-content-wrapper .floating-ads {
+        flex-direction: column; }
+        .site-content-wrapper .floating-ads .ad-wrapper {
+          margin-bottom: 2rem; } }
   .site-content-primary .post {
     display: flex; }
     .site-content-primary .post-content {
@@ -274,6 +324,21 @@ body {
         .site-content-primary .post-content-header p {
           border-bottom: 1px solid #c9cac9;
           padding-bottom: 1.5rem; }
+    @media (max-width: 1240px) {
+      .site-content-primary .post {
+        flex-direction: column-reverse;
+        align-items: center; }
+        .site-content-primary .post .site-warnings {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 2rem; }
+          .site-content-primary .post .site-warnings .warning {
+            max-width: 57rem;
+            width: auto; } }
+    @media (max-width: 767px) {
+      .site-content-primary .post .site-warnings .warning {
+        max-width: 20rem; } }
   .site-content-primary .site-content {
     margin-left: 2rem; }
   .site-content-secondary {
@@ -281,8 +346,9 @@ body {
     flex-direction: column; }
     .site-content-secondary .floating-ads-container {
       flex-grow: 1; }
-      .site-content-secondary .floating-ads-container .ad-wrapper:first-child {
-        margin: 0; }
+      @media (min-width: 767px) {
+        .site-content-secondary .floating-ads-container .ad-wrapper:first-child {
+          margin: 0; } }
 
 .site-warnings .warning {
   width: 21rem;
@@ -290,10 +356,5 @@ body {
   border: 5px solid #bf3918;
   color: white;
   background: #ec4a39; }
-
-.bottom-ads {
-  margin-top: 2rem; }
-  .bottom-ads .ad-wrapper {
-    margin: 0; }
 
 /*# sourceMappingURL=main.css.map */

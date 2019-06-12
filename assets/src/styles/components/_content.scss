@@ -3,6 +3,32 @@
     &-wrapper {
         padding: 0 $siteGutter;
         @include flexbox (inherit, inherit);
+        @media (max-width: $tabletMaxWidth) {
+            flex-direction: column;
+
+            .bottom-ads {
+                display: none;
+            }
+
+            .floating-ads {
+                @include flexbox (space-evenly, center);
+                margin-bottom: $siteGutter;
+
+                .ad-wrapper {
+                    margin: 0;
+                }
+            }
+        }
+
+        @media (max-width: $mobileMaxWidth) {
+            .floating-ads {
+                flex-direction: column;
+
+                .ad-wrapper {
+                    margin-bottom: $siteGutter;
+                }                
+            }
+        }
     }
 
     &-primary {
@@ -25,6 +51,28 @@
                     }
                 }
             }
+
+            @media (max-width: $tabletMaxWidth) {
+                flex-direction: column-reverse;
+                align-items: center;
+
+                .site-warnings {
+                    @include flexbox (center, center);
+                    margin-bottom: $siteGutter;
+
+                    .warning {
+                        max-width: 57rem;
+                        width: auto;
+                    }
+                }
+            }
+
+            @media (max-width: $mobileMaxWidth) {
+                .site-warnings .warning {
+                    max-width: 20rem;
+                }
+            
+            }
         }
         .site-content {
             margin-left: $siteGutter;
@@ -40,8 +88,10 @@
         .floating-ads-container {
             flex-grow: 1;
 
-            .ad-wrapper:first-child {
-                margin: 0;
+            @media (min-width: $mobileMaxWidth) {
+                .ad-wrapper:first-child {
+                    margin: 0;
+                }
             }
         }
     }

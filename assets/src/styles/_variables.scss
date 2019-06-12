@@ -4,6 +4,14 @@ $siteSecondColor: #3b3b3b;
 $siteMainFontColor: #fff; 
 $siteBorderColor: #c9cac9;
 
+$tabletMaxWidth: 1240px;
+$tabletMinWidth: 768px;
+$mobileMaxWidth: 767px;
+
+@media (max-width: $mobileMaxWidth) {
+    $siteGutter: 1rem;
+}
+
 @mixin reset () {
     margin: 0;
     padding: 0;

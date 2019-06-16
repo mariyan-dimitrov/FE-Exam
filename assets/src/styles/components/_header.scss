@@ -10,76 +10,39 @@
 
     & .site-left {
         min-width: 22rem;
-        @media (max-width: $mobileMaxWidth) {
-            min-width: inherit;
-        }
 
         &-search {
-            height: 2.5rem;
+            position: relative;
+            height: 2.8rem;
             width: 20rem;
             border: 1px solid black;
             border-radius: 7px;
             overflow: hidden;
             margin-left: 1.5rem;
-
+            
             &-input {
+                color:white;
                 width: 100%;
                 border: none;
                 background: $siteSecondColor;
                 height: 100%;
-                padding: 0 1rem;
+                padding: 0 3rem 0 1rem;
 
                 &::placeholder {
                     color: gray;
                 }
             }
 
-
-            @media (max-width: $mobileMaxWidth) {
-                display: none;
+            &:after {
+                position: absolute;
+                top: 50%;
+                right: 1rem;
+                transform: translateY(-50%);
+                content: url('../../src/media/search.svg')
             }
         }
-    }
-
-    .hamburger span {
-        display: none;
-    }
-
-    @media (max-width: $tabletMaxWidth) {
-        .hamburger {
-            position: relative;
-            display: block;
-
-            .site-navigation {
-                display: none;
-            }
-            &.opened {
-
-                .site-navigation {
-                    z-index: 5;
-                    display: flex;
-                    position: absolute;
-                    top: 2rem;
-                    right: -11rem;
-                    height: 20rem;
-
-                    &-list {
-                        flex-direction: column;
-                        background: $siteMainColor;
-                        color: $siteMainFontColor;
-                    }
-                }
-            }
-        }
-
-
-        .hamburger span {
-            display: block;
-            width: 33px;
-            height: 4px;
-            margin-bottom: 5px;
-            position: relative;
-            background: $siteMainFontColor;
+        @media (max-width: $mobileMaxWidth) {
+            min-width: inherit;
         }
     }
 }
@@ -88,13 +51,16 @@
     min-width: 22rem;
 
     &-list {
-        @include flexbox (space-evenly, center);
+        @include flexbox (flex-end, center);
 
         &-item a {
             color: $siteMainFontColor;
-            padding: 2rem;
+            padding: 1rem 1.5rem;
             font-weight: 700;
-            font-size: 1.2rem;
+        }
+
+        &-item:last-child a {
+            padding-right: 0;
         }
     }
 }

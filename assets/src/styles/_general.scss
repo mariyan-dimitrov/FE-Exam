@@ -1,20 +1,8 @@
-html {
-    overflow-x: hidden;
-    
-    @media (max-width: $mobileMaxWidth) { 
-        font: 10px/1.6 arial, sans-serif;
-    }   
-}
-
 body {
-    margin: 4.5rem auto;
+    margin: 4rem auto;
     padding: 0;
-    max-width: 1360px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
-    @media (max-width: $mobileMaxWidth) {
-        @include reset();
-        box-shadow:inherit;
-    }
+    max-width: 1250px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
 }
 
 .row {
@@ -22,23 +10,16 @@ body {
 }
 
 .author-avatar {
-    margin-top: -5rem;
-    margin-left: $siteGutter;
+    margin-top: -3.5rem;
+    margin-left: 2rem;
     position: relative;
-    border-radius: 30px;
-    height: 10rem;
-    width: 10rem;
 
     & img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: auto;
-        transform: rotate(-20deg);
-        border-radius: 30px;
+        transform: rotate(-15deg);
+        object-fit: cover;
+        border-radius: 10px;
+        height: 6rem;
+        width: 6rem;
     }
 }
 

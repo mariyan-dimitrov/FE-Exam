@@ -1,24 +1,18 @@
 .site-footer {
     @include flexbox (space-between, center);
-    height: 5rem;
+    padding: 0 $siteGutter;
+    height: 10rem;
 
     &-part {
         display: inline-block;
-
+        font-weight: 700;
+        font-size: 18px;
         &-aside {
             width: 10rem;
         }
-    }
 
-    @media (max-width: $mobileMaxWidth) {
-        flex-direction: column;
-        span {
-            font-weight: 700;
-        }
-        
-        &-part-aside {
-            width: auto;
-            
+        &-aside:last-child {
+            text-align: right;
         }
     }
 }

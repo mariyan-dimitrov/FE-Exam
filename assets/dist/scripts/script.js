@@ -1,1 +1,1 @@
-"use strict";
+"use strict";$(function(){$(".floating-ads").stick_in_parent({offset_top:50});var i=0,n=$(".post-content"),t=$(window),o=$(document),e=500,c=!1,s=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);function a(){s?t.scrollTop()+t.height()+e>=o.height()-window.visualViewport.height&&!c&&(h(),c=!0,r()):t.scrollTop()+t.height()+e>=o.height()&&!c&&(h(),c=!0,r())}function r(){setTimeout(function(){c=!1,a()},300)}function h(){i<5&&$.getJSON("./data.json",function(t){i++,n.append(t.html)})}t.on("scroll",function(){a()})});

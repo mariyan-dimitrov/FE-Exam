@@ -15,4 +15,15 @@
             text-align: right;
         }
     }
+    @media (max-width: $mobileMaxWidth) {
+        flex-direction: column;
+        span {
+            font-weight: 700;
+        }
+        
+        &-part-aside {
+            width: auto;
+            
+        }
+    }
 }

@@ -3,6 +3,9 @@
 html {
     font: 16px/1.5 'Roboto',sans-serif;
     box-sizing: border-box;
+    @media (max-width: $mobileMaxWidth) {
+        font-size: 12px;
+    }    
 }
 
 *::before, *::after, * {

@@ -2,6 +2,14 @@
     border: 1px solid $siteBorderColor;
     margin-left: $siteGutter;
 
+    @media (max-width: $tabletMaxWidth) {
+        @include reset();
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        border: none;
+    }
+
     .comments {
         &-header {
             @include flexbox (space-between, center);
@@ -11,9 +19,18 @@
             .toggle-comments {
                 text-decoration: underline;
             }
+
+            @media (max-width: $mobileMaxWidth) {
+                padding: 1rem 0;
+            }
         }
 
         &-main {
+            display: none;
+        }
+
+
+        &-main.opened {
             @include flexbox (flex-start);
             align-items: inherit;
 
@@ -41,6 +58,15 @@
                                 transform: inherit;
                                 border-radius: 0;
                             }
+
+                            @media (max-width: $tabletMaxWidth) {
+                                flex-basis: inherit;
+                                margin-right: 2rem;
+                            }
+
+                            @media (max-width: $mobileMaxWidth) {
+                                flex-basis: 8rem;
+                            }
                         }
 
                         &-details {
@@ -58,6 +84,9 @@
                         }
                     }
 
+                    @media (max-width: $mobileMaxWidth) {
+                        padding: $siteGutter/1 0; 
+                    }
                 }
 
                 &-add-new {
@@ -76,20 +105,54 @@
                             width: 100%;
                         }
 
-                        & input, textarea {
+                        & input,
+                        textarea {
                             border: none;
                             border-radius: 5px;
                             background: #f1f1f1;
                             padding: 1rem 0;
-                            
                         }
 
                         &:last-child {
                             margin: 0;
                         }
                     }
+
                     &-field:nth-child(3) {
                         flex-grow: 1;
+                    }
+
+                    @media (max-width: $mobileMaxWidth) {
+                        padding: $siteGutter/1 0; 
+                    }
+                }
+            }
+
+            @media (max-width: $tabletMaxWidth) {
+                flex-direction: column-reverse;
+
+                .comments-all {
+                    border-right: none;
+                }
+
+                .comments-add-new {
+                    width: 100%;
+                    border-bottom: 1px solid $siteBorderColor;
+
+                    input {
+                        width: 50%;
+                    }
+
+                    textarea {
+                        width: 100%;
+                    }
+                }
+            }
+            @media (max-width: $mobileMaxWidth) {
+                width: 100%;
+                .comments-add-new {
+                    & input, textarea {
+                        width: 100%;
                     }
                 }
             }

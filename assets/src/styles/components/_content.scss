@@ -3,6 +3,33 @@
     &-wrapper {
         padding: 0 $siteGutter;
         @include flexbox (inherit, inherit);
+        @media (max-width: $tabletMaxWidth) {
+            flex-direction: column;
+            margin-top: $siteGutter;
+
+            .bottom-ads {
+                display: none;
+            }
+
+            .floating-ads {
+                @include flexbox (space-evenly, center);
+                margin-bottom: $siteGutter;
+
+                .ad-wrapper {
+                    margin: 0;
+                }
+            }
+        }
+
+        @media (max-width: $mobileMaxWidth) {
+            .floating-ads {
+                flex-direction: column;
+
+                .ad-wrapper {
+                    margin-bottom: $siteGutter;
+                }                
+            }
+        }
     }
 
     &-primary {
@@ -23,8 +50,38 @@
                     p {
                         border-bottom: 1px solid $siteBorderColor;
                         padding-bottom: 1.5rem;
+                        
+                        @media (max-width: $tabletMaxWidth) {
+                            padding-bottom: 4rem;
+                        }
                     }
                 }
+
+                @media (max-width: $mobileMaxWidth) {
+                    margin: 0;
+                }
+            }
+
+            @media (max-width: $tabletMaxWidth) {
+                flex-direction: column-reverse;
+                align-items: center;
+
+                .site-warnings {
+                    @include flexbox (center, center);
+                    margin-bottom: $siteGutter;
+
+                    .warning {
+                        max-width: 57rem;
+                        width: auto;
+                    }
+                }
+            }
+
+            @media (max-width: $mobileMaxWidth) {
+                .site-warnings .warning {
+                    max-width: 20rem;
+                }
+            
             }
         }
         .site-content {
@@ -42,7 +99,9 @@
             flex-grow: 1;
 
             .ad-wrapper:first-child {
-                margin: 0;
+                @media (min-width: $mobileMaxWidth) {
+                    margin: 0;
+                }
             }
         }
     }
@@ -56,6 +115,7 @@
         color: white;
         background: #ec4a39;
     }
+    
     &-header {
         position: relative;
         & h4 {
@@ -66,6 +126,13 @@
                 content: url('../../src/media/warning.svg');
             }
         }
+    }
+    @media (max-width: $tabletMaxWidth) {
+        padding: 0 $siteGutter;
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        padding: 0;
     }
 }
 

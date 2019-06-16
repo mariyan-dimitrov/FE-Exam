@@ -21,6 +21,19 @@
             padding: 1rem $siteGutter;
             font-weight: 700;
         }
+
+        @media (max-width: $tabletMaxWidth) {
+            @include reset();
+
+            & .entry-image {
+                border-radius: 0;
+            }
+
+            & .entry-content {
+                top: $siteGutter;
+                right: $siteGutter;
+            }
+        }
     }
 
     &-author {

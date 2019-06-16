@@ -14,5 +14,24 @@
             font-weight: 700;
             padding: 1.5rem 3rem;
         }
+        
+        @media (max-width: $mobileMaxWidth) {
+            @include reset();
+        }
+
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        @include flexbox (stretch, stretch);
+        flex-direction: column;
+
+        &-box {
+            padding: $siteGutter/2 $siteGutter/2;
+
+            a {
+                display: block;
+                text-align: center;
+            }
+        }
     }
 }

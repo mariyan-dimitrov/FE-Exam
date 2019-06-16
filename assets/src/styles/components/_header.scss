@@ -4,11 +4,8 @@
     color: $siteMainFontColor;
     @include flexbox (space-between, center);
 
-    & .site-side {
-        @include flexbox (space-between, center);
-    }
-
     & .site-left {
+        @include flexbox (space-between, center);
         min-width: 22rem;
 
         &-search {
@@ -19,9 +16,9 @@
             border-radius: 7px;
             overflow: hidden;
             margin-left: 1.5rem;
-            
+
             &-input {
-                color:white;
+                color: white;
                 width: 100%;
                 border: none;
                 background: $siteSecondColor;
@@ -40,15 +37,79 @@
                 transform: translateY(-50%);
                 content: url('../../src/media/search.svg')
             }
+
+            @media (max-width: $mobileMaxWidth) {
+                @include reset();
+                border:none;
+                width: auto;
+                &-input {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
         }
+      
         @media (max-width: $mobileMaxWidth) {
+            &-name {
+                width: 9rem;
+    
+            }
+            flex-grow: 1;
             min-width: inherit;
+        }
+    }
+    .hamburger span {
+        display: none;
+    }
+
+    @media (max-width: $tabletMaxWidth) {
+        .hamburger {
+            position: relative;
+            display: block;
+
+            .site-navigation {
+                display: none;
+            }
+
+            &.opened {
+
+                .site-navigation {
+                    z-index: 5;
+                    display: flex;
+                    position: absolute;
+                    top: 2rem;
+                    right: -15rem;
+                    height: 10rem;
+
+                    &-list {
+                        flex-direction: column;
+                        background: $siteMainColor;
+                        color: $siteMainFontColor;
+
+                        &-item {
+                            padding: 1rem;
+                            & a {
+                                padding: 0; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .hamburger span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            margin-bottom: 5px;
+            position: relative;
+            background: $siteMainFontColor;
         }
     }
 }
 
 .site-navigation {
-    min-width: 22rem;
 
     &-list {
         @include flexbox (flex-end, center);

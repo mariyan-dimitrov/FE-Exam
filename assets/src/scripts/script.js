@@ -29,24 +29,25 @@ $(function () {
 
 function almInitialize () {
     let timesALMisTriggered = 0;
-    let $appendAfter = $('.post-content');
 
     let $window = $(window);
     let $document = $(document);
-    let offset = 700;
+    let offset = 0;
     let bottomReached = false;
     let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     function checkToTriggerALM() {
+        let $appendAfter = $('.post-content');
+        
         if (isMobile) {
-            if ($window.scrollTop() + $window.height() + offset >= $document.height() - window.visualViewport.height && !bottomReached) {
-                apppendContent();
+            if ($window.scrollTop() + $window.height() + offset >= $appendAfter.height() + $appendAfter.offset().top - window.visualViewport.height && !bottomReached) {
+                apppendContent($appendAfter);
                 bottomReached = true;
                 debounce();
             }
         } else {
-            if ($window.scrollTop() + $window.height() + offset >= $document.height() && !bottomReached) {
-                apppendContent();
+            if ($window.scrollTop() + $window.height() + offset >= $appendAfter.height() +$appendAfter.offset().top && !bottomReached) {
+                apppendContent($appendAfter);
                 bottomReached = true;
                 debounce();
             }
@@ -61,11 +62,11 @@ function almInitialize () {
     }
 
 
-    function apppendContent () {
+    function apppendContent ($appendAfter) {
         if (timesALMisTriggered < 5) {
             $.getJSON( "./data.json", function( data ) {
                 timesALMisTriggered++;
-                window.scrollTo(0, $appendAfter.offset().top+$appendAfter.height())
+                // window.scrollTo(0, $appendAfter.offset().top+$appendAfter.height())
                 $appendAfter.append(data.html);
             });
         }

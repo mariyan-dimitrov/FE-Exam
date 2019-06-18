@@ -155,8 +155,9 @@ body {
         display: flex;
         position: absolute;
         top: 2rem;
-        right: -15rem;
-        height: 10rem; }
+        right: 0;
+        height: 13rem;
+        width: 9rem; }
         .site-header .hamburger.opened .site-navigation-list {
           flex-direction: column;
           background: #1d1d1d;
@@ -175,8 +176,9 @@ body {
 
 .site-navigation-list {
   display: flex;
-  justify-content: flex-end;
-  align-items: center; }
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
   .site-navigation-list-item a {
     color: #fff;
     padding: 1rem 1.5rem;
@@ -373,6 +375,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 2rem 0;
   padding: 0 2rem;
   height: 10rem; }
   .site-footer-part {
@@ -448,7 +451,11 @@ body {
             width: auto; } }
     @media (max-width: 767px) {
       .site-content-primary .post .site-warnings .warning {
-        max-width: 20rem; } }
+        max-width: 20rem; }
+      .site-content-primary .post .site-warnings-header h4 {
+        margin-left: 3rem; }
+        .site-content-primary .post .site-warnings-header h4:before {
+          top: -0.3rem; } }
   .site-content-primary .site-content {
     margin-left: 2rem; }
   .site-content-secondary {

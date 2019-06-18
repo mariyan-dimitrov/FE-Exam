@@ -1,5 +1,6 @@
 .site-footer {
     @include flexbox (space-between, center);
+    margin: 2rem 0;
     padding: 0 $siteGutter;
     height: 10rem;
 

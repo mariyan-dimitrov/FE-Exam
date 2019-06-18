@@ -78,10 +78,20 @@
             }
 
             @media (max-width: $mobileMaxWidth) {
-                .site-warnings .warning {
-                    max-width: 20rem;
+                .site-warnings {
+
+                    & .warning {
+                        max-width: 20rem;
+                    }
+                    &-header h4 {
+                        margin-left: 3rem;
+
+                        &:before {
+                            top: -0.3rem;
+                        }
+                    }
+                    
                 }
-            
             }
         }
         .site-content {

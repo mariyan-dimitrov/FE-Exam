@@ -78,8 +78,9 @@
                     display: flex;
                     position: absolute;
                     top: 2rem;
-                    right: -15rem;
-                    height: 10rem;
+                    right: 0;
+                    height: 13rem;
+                    width: 9rem;
 
                     &-list {
                         flex-direction: column;
@@ -112,7 +113,8 @@
 .site-navigation {
 
     &-list {
-        @include flexbox (flex-end, center);
+        @include flexbox (center, center);
+        width: 100%;
 
         &-item a {
             color: $siteMainFontColor;
